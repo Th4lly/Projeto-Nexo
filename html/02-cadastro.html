@@ -1,16 +1,169 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="a Tela de cadastro do projeto Nexo">
-    <title>Tela de cadastro</title>
+
+    <title> Nexo || Cadastro </title>
+
+    <link rel="stylesheet" href="cadastro.css">
 </head>
+
 <body>
 
-    <header>
-        <h1> Que bom que decidiu se conhecer melhor </h1>
-    </header>
-    
+    <main class="register-page">
+
+        <section class="register-card">
+
+     <img 
+      src="logo-nexo.png" 
+                alt="Logo Nexo"
+                class="brand-logo"
+            >
+
+            <h1>
+                Que bom que decidiu <br>
+                se conhecer melhor
+            </h1>
+
+            <p class="subtitle">
+                E por que não começar <br>
+                pelo básico?
+            </p>
+
+            <form id="registerForm">
+
+                <!-- Nome completo -->
+                <label for="fullName"> Nome completo </label>
+                <input 
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    placeholder="Como se chama?"
+                    autocomplete="name"
+                    required
+                >
+
+                <!-- Pronome -->
+     <label for="pronoun"> Pronome </label>
+     <select id="pronoun" name="pronoun" required>
+     <option value="" selected disabled>
+     Selecione seu pronome
+                    </option>
+                    <option value="ele/dele"> Ele/dele </option>
+                    <option value="ela/dela"> Ela/dela </option>
+                    <option value="elu/delu"> Elu/delu </option>
+                    <option value="nao-informar">
+                        Prefiro não informar
+                    </option>
+                </select>
+
+                <!-- Data de nascimento -->
+                <fieldset class="birth-field">
+
+                    <legend> Data de nascimento </legend>
+
+                    <div class="birth-row">
+
+                        <select id="birthDay" name="birthDay" required>
+                            <option value="" selected disabled> Dia </option>
+                        </select>
+
+                        <select id="birthMonth" name="birthMonth" required>
+                            <option value="" selected disabled> Mês </option>
+                            <option value="01"> Janeiro </option>
+                            <option value="02"> Fevereiro </option>
+                            <option value="03"> Março </option>
+                            <option value="04"> Abril </option>
+                            <option value="05"> Maio </option>
+                            <option value="06"> Junho </option>
+                            <option value="07"> Julho </option>
+                            <option value="08"> Agosto </option>
+                            <option value="09"> Setembro </option>
+                            <option value="10"> Outubro </option>
+                            <option value="11"> Novembro </option>
+                            <option value="12"> Dezembro </option>
+                        </select>
+
+                        <select id="birthYear" name="birthYear" required>
+                            <option value="" selected disabled> Ano </option>
+                        </select>
+
+                    </div>
+
+                </fieldset>
+
+                <!-- CPF -->
+                <label for="cpf"> CPF </label>
+                <input 
+                    type="text"
+                    id="cpf"
+                    name="cpf"
+                    placeholder="000.000.000-00"
+                    maxlength="14"
+                    inputmode="numeric"
+                    required
+                >
+
+                <!-- Email -->
+                <label for="email"> Email </label>
+                <input 
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Seu melhor email"
+                    autocomplete="email"
+                    required
+                >
+
+                <!-- Senha -->
+                <label for="password"> Senha </label>
+
+                <div class="password-box">
+
+                    <input 
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Crie uma senha"
+                        minlength="8"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                    <button 
+                        type="button"
+                        class="toggle-password"
+                        aria-label="Mostrar senha"
+                    >
+                        ◉
+                    </button>
+
+                </div>
+
+                <small class="hint">
+                    Use pelo menos 8 caracteres.
+                </small>
+
+                <!-- Botão cadastrar -->
+                <button type="submit" class="submit-button">
+                    Cadastrar
+                </button>
+
+                <p class="login-link">
+                    Já tem uma conta?
+                    <a href="#" id="loginLink"> Entrar </a>
+                </p>
+
+            </form>
+
+            <p id="feedback" class="feedback"></p>
+
+        </section>
+
+    </main>
+
+    <script src="cadastro.js"></script>
+
 </body>
 </html>
