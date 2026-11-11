@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="MY_CLIENT_ID_ON_GOOGLE_DEV.apps.googleusercontent.com">
+
+    <title>Nexo || Login</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <section>
+        <h1> Nexo </h1>
+
+        <p class="subtitle">
+            Que ótimo te ver de novo!
+        </p>
+
+        <p>
+            Faça login para continuar
+        </p>
+
+    </section>
+
+    <div class="login-card">
+
+        <form id="loginForm">
+
+            <!-- Email -->
+            <label for="email"> E-mail </label>
+            <input 
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Seu melhor email"
+                autocomplete="email"
+                required
+            >
+
+            <!-- Senha -->
+            <label for="password"> Senha </label>
+            <input 
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Crie uma senha"
+                autocomplete="current-password"
+                required
+            >
+
+            <label for="remember">
+                <input 
+                    type="checkbox"
+                    id="remember"
+                    name="remember"
+                >
+                Lembre de mim
+            </label>
+
+            <p>
+                <a href="forgot-password.html"> Esqueceu sua senha? </a>
+            </p>
+
+            <button type="submit"> Entrar </button>
+
+            <p> ou </p>
+
+            <div class="google-signin">
+          <!-- To integrate Google Sign-in -->
+          <script src="https://apis.google.com/js/api.js"></script>
+          <script src="https://apis.google.com/js/platform.js" async defer></script>
+            </div>
+
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+             
+        <p>
+             Não tem uma conta?
+        <a href="cadastro.html">Cadastre-se</a> </p>
+        </form>
+    </div>
+    
+</body>
+</html>
