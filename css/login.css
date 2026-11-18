@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+    --fonte-primaria: "Poppins", sans-serif;
+
+    /* Cores */
+    --cor-texto-primaria: #1f1f1f;
+    --cor-texto-secundaria: #ffffff;
+    --cor-verde: #2f4d2f;
+    --cor-destaque: #5b1d48;
+    --cor-cartao: #f8fbff;
+    --cor-campo: #a8b8ae;
+    --cor-divisoria: #d8cbd5;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 28px;
+    background: var(--cor-verde);
+    font-family: var(--fonte-primaria);
+    color: var(--cor-texto-primaria);
+}
+
+/* Cabeçalho */
+body > section {
+    width: min(100%, 360px);
+    padding: 28px 20px 0;
+    border-radius: 20px 20px 0 0;
+    background-color: var(--cor-cartao);
+    text-align: center;
+}
+
+.logo {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 8px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    object-fit: contain;
+}
+
+body > section h1 {
+    margin-bottom: 2px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 16px;
+}
+
+body > section p:last-child {
+    margin-top: 2px;
+    font-size: 11px;
+}
+
+/* Cartão do formulário */
+.login-card {
+    width: min(100%, 360px);
+    padding: 22px 20px 30px;
+    border-radius: 0 0 20px 20px;
+    background-color: var(--cor-cartao);
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#loginForm > label[for="email"],
+#loginForm > label[for="password"] {
+    margin: 10px 0 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+#loginForm input[type="email"],
+#loginForm input[type="password"] {
+    width: 100%;
+    height: 40px;
+    padding: 0 14px;
+    border: 0;
+    border-radius: 999px;
+    outline: none;
+    background-color: var(--cor-campo);
+    color: var(--cor-texto-primaria);
+    font: inherit;
+    font-size: 11px;
+}
+
+#loginForm input::placeholder {
+    color: #66736b;
+}
+
+#loginForm input[type="email"]:focus,
+#loginForm input[type="password"]:focus {
+    box-shadow: 0 0 0 2px var(--cor-verde);
+}
+
+/* Lembre de mim */
+#loginForm > label[for="remember"] {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    font-size: 11px;
+}
+
+#remember {
+    width: 14px;
+    height: 14px;
+    accent-color: var(--cor-verde);
+}
+
+/* Esqueceu a senha */
+#loginForm > p:nth-of-type(1) {
+    margin-top: -18px;
+    text-align: right;
+    font-size: 10px;
+}
+
+a {
+    color: var(--cor-verde);
+}
+
+#loginForm > p:nth-of-type(1) a,
+#loginForm > p:nth-of-type(3) a {
+    text-decoration: underline;
+}
+
+/* Botão Entrar */
+#loginForm > button {
+    width: 65%;
+    min-height: 40px;
+    align-self: center;
+    margin-top: 28px;
+    border: 0;
+    border-radius: 999px;
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto-secundaria);
+    font: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#loginForm > button:hover {
+    filter: brightness(1.1);
+}
+
+#loginForm > button:focus-visible {
+    outline: 3px solid var(--cor-verde);
+    outline-offset: 3px;
+}
+
+/* Separador "ou" */
+#loginForm > p:nth-of-type(2) {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 12px 0;
+    font-size: 10px;
+}
+
+#loginForm > p:nth-of-type(2)::before,
+#loginForm > p:nth-of-type(2)::after {
+    height: 1px;
+    flex: 1;
+    background-color: var(--cor-divisoria);
+    content: "";
+}
+
+/* Botão de login do Google */
+.google-signin {
+    display: flex;
+    justify-content: center;
+    margin: 8px auto;
+}
+
+/* Link para cadastro */
+#loginForm > p:nth-of-type(3) {
+    margin-top: 14px;
+    text-align: center;
+    font-size: 10px;
+}
+
+/* Desktop: cartão horizontal, compacto e alinhado */
+@media (min-width: 700px) {
+    body {
+        display: grid;
+        grid-template-columns: repeat(
+            2,
+            minmax(0, min(330px, calc((100vw - 64px) / 2)))
+        );
+        justify-content: center;
+        align-content: center;
+        align-items: stretch;
+        padding: 32px;
+        background: linear-gradient(
+    to bottom,
+    var(--cor-verde) 0%,
+    var(--cor-verde) 48%,
+    var(--cor-destaque) 100%
+);
+    }
+
+    body > section,
+    .login-card {
+        width: 100%;
+        max-width: none;
+        min-height: 430px;
+        background-color: var(--cor-cartao);
+    }
+
+    body > section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 28px;
+        border-radius: 20px 0 0 20px;
+        text-align: center;
+    }
+
+    .login-card {
+        display: flex;
+        align-items: center;
+        padding: 28px;
+        border-radius: 0 20px 20px 0;
+    }
+
+    #loginForm {
+        width: 100%;
+    }
+}
+
+/* Celular: conteúdo empilhado */
+@media (max-width: 699px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    body > section,
+    .login-card {
+        width: min(100%, 360px);
+    }
+
+    body > section {
+        border-radius: 20px 20px 0 0;
+    }
+
+    .login-card {
+        border-radius: 0 0 20px 20px;
+    }
+}
+
+/* Ajuste para telas baixas */
+@media (max-height: 650px) {
+    body {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+}
