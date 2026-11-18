@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <section>
+    <header>
         <h1> Nexo </h1>
 
         <p class="subtitle">
@@ -23,10 +23,11 @@
             Faça login para continuar
         </p>
 
-    </section>
+    </header>
 
-    <div class="login-card">
-
+    <main class="login-card">
+        
+        <section>
         <form id="loginForm">
 
             <!-- Email -->
@@ -66,7 +67,7 @@
 
             <button type="submit"> Entrar </button>
 
-            <p> ou </p>
+            <span> ou </span> 
 
             <div class="google-signin">
           <!-- To integrate Google Sign-in -->
@@ -76,11 +77,16 @@
 
             <div class="g-signin2" data-onsuccess="onSignIn"></div>
              
-        <p>
+        </form>
+
+        <footer>
+          <p>
              Não tem uma conta?
         <a href="cadastro.html">Cadastre-se</a> </p>
-        </form>
-    </div>
+        </footer>
+        
+      </section>
+    </main>
     
 </body>
 </html>
