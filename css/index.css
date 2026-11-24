@@ -1,0 +1,360 @@
+:root{
+    --fonte-primaria: "Outfit", sans-serif;
+    --fonte-secundaria: "DM Sans", sans-serif;
+    --fonte-terciaria: "Nunito", sans-serif;
+
+    --cor--de-texto-primaria: #18191B ;
+    --cor-de-texto-secundaria: #1B1C1C;
+    --cor-primaria: #2C732C;
+    --cor-secundaria: #5B1D48;
+
+    --bg-primario: #F8FBFF;
+    --bg-secundario: #D7E2EA ;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--bg-primario);
+}
+
+h1{
+    font-family: var(--fonte-primaria);
+   font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: 700;
+
+    color: var(--cor--de-texto-primaria);
+
+    margin-top: clamp(24px, 5vh, 56px);
+    margin-left: clamp(20px, 5vw, 56px);
+    
+}
+
+.form-pesquisa{
+    margin-top: clamp(24px, 6vh, 40px);
+    width: 300px;
+    max-width: calc(100% - 40px);
+    position: relative;
+    margin-inline: auto;
+}
+
+.form-pesquisa img{
+    position: absolute;
+    left: 16px;
+    top: 36%;
+    transform: translateY(-50%);
+    
+    width: 16px;
+    height: 16px;
+}
+
+.form-pesquisa input{
+    font-family: var(--fonte-terciaria);
+    font-size: 16px;
+    background-color: var(--bg-secundario);
+    
+   width: 100%;
+   height: 40px;
+    
+    border-radius: 32px;
+    border: none;
+    padding: 10px 79px 10px 48px;
+}
+
+.texto-acessivel{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.carrossel-banners{
+    margin-top: 40px;
+}
+
+.agrupador-banners{
+    width: min(300px, calc(100% - 40px));
+    margin-inline: auto;
+
+
+    display: flex;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.banner{
+    flex: 0 0 100%;
+    aspect-ratio: 300 / 98;
+}
+
+.banner a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.banner img{
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.indicadores-carrossel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 16px;
+}
+
+.indicadores-carrossel button{
+    width: 8px;
+    height: 8px;
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+    background-color: var(--bg-secundario);
+}
+
+.indicadores-carrossel button[aria-current="true"]{
+    background-color: var(--cor-primaria);
+}
+
+.secao-recomendada{
+    margin-top: 56px;
+    padding-left: clamp(20px, 12.82vw, 56px);
+    padding-right: clamp(20px, 21.92vw, 96px);
+}
+
+.secao-recomendada h2{
+    font-family: var(--fonte-secundaria);
+    color: var(--cor--de-texto-primaria);
+    font-size: clamp(20px, 5.48vw, 24px);
+    font-weight: 600;
+    margin-bottom: 24px
+}
+
+.grade-recomendacao{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: clamp(16px, 3vw, 48px);
+    flex-wrap: wrap;
+}
+
+.card-recomendacao img{
+    width: clamp(100px, 16vw, 124px);
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    aspect-ratio: 124 / 80;
+}
+
+.explorar-temas{
+    margin-top: 56px;
+        padding-left: clamp(20px, 4.1vw, 56px);
+    padding-right: clamp(20px, 13.6vw, 186px);
+}
+
+.explorar-temas h2{
+    font-family: var(--fonte-secundaria);
+    font-size: clamp(20px, 1.6vw, 24px);
+    font-weight: 600;
+    color: var(--cor--de-texto-primaria);
+    margin-bottom: 32px;
+}
+
+.grade-temas{
+    display: grid;grid-template-columns: repeat(2, 1fr);
+    column-gap: clamp(12px, 3vw, 48px);
+    row-gap: clamp(24px, 4vw, 32px);
+    align-items: center;
+}
+
+.card-explorar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-explorar img{
+    width: clamp(80px, 25.64vw, 100px);
+    height: auto;
+    max-width: 100%;
+    border-radius: 12px;
+    aspect-ratio: 100 / 76;
+    object-fit: cover;
+}
+
+
+/* =========================================
+   NAVEGAÇÃO PRINCIPAL
+========================================= */
+
+nav {
+    position: fixed;
+    z-index: 1000;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    min-height: 68px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 8px 12px;
+
+    background-color: var(--bg-primario);
+    border-top: 1px solid var(--bg-secundario);
+
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.05);
+
+    /* Compatibilidade com celulares com barra de gestos */
+    padding-bottom: max(8px, env(safe-area-inset-bottom));
+}
+
+/* Links */
+
+nav a {
+    flex: 1;
+    min-width: 0;
+    min-height: 48px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px 6px;
+
+    border-radius: 12px;
+
+    color: var(--cor-de-texto-secundaria);
+    text-decoration: none;
+
+    font-family: var(--fonte-secundaria);
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+/* Textos */
+
+nav a p {
+    margin: 0;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* Interação com mouse */
+
+nav a:hover {
+    color: var(--cor-primaria);
+    background-color: rgba(44, 115, 44, 0.08);
+}
+
+/* Página atual */
+
+nav a[aria-current="page"] {
+    color: var(--cor-primaria);
+    background-color: rgba(44, 115, 44, 0.10);
+    font-weight: 700;
+}
+
+/* Acessibilidade por teclado */
+
+nav a:focus-visible {
+    outline: 3px solid var(--cor-primaria);
+    outline-offset: -3px;
+}
+
+/* Remove animações para usuários que preferem
+   movimento reduzido */
+
+@media (prefers-reduced-motion: reduce) {
+    nav a {
+        transition: none;
+    }
+}
+
+/* Evita que o conteúdo da página fique escondido
+   atrás da navegação */
+
+body {
+    padding-bottom: calc(76px + env(safe-area-inset-bottom));
+}
+
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (min-width: 600px) {
+
+    nav {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    nav a {
+        max-width: 160px;
+        font-size: 15px;
+    }
+
+}
+
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media (min-width: 1024px) {
+
+    nav {
+        position: static;
+
+        width: min(90%, 720px);
+        min-height: 64px;
+
+        margin: 64px auto 24px;
+
+        padding: 8px 16px;
+
+        border: 1px solid var(--bg-secundario);
+        border-radius: 16px;
+
+        box-shadow: none;
+    }
+
+    nav a {
+        max-width: none;
+        font-size: 15px;
+    }
+
+    body {
+        padding-bottom: 0;
+    }
+
+}
