@@ -1,74 +1,91 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tela de início do projeto Nexo">
+    <meta name="description" content="Tela de inicio do projeto Nexo">
 
-    <title>Nexo | Início</title>
+    <title>Nexo || Início</title>
+
+    <link rel="icon" type="image/jpeg" href="../img/projeto%20nexo%20img.jpeg">
+
     <link rel="stylesheet" href="../css/inicio.css">
 </head>
-<body>
-    <div class="cartao-inicial">
-        <header class="cabecalho">
-            <img
-                class="logo"
-                src="../img/projeto%20nexo%20img.jpeg"
-                alt="Logo do Nexo: flor de lótus rosa e folhas verdes"
-            >
-            <h1>Nexo</h1>
-        </header>
 
-        <main class="conteudo">
-            <div class="descricao">
+<body>
+    <main>
+
+        <section class="hero">
+            <header>
+                <img class="logo" src="../img/projeto%20nexo%20img.jpeg" alt="Logo do Nexo">
+                <h1>Nexo</h1>
+            </header>
+
+            <div class="subtitulo">
                 <p>Conhecimento que conecta.</p>
                 <p>Saúde que transforma.</p>
             </div>
 
-            <p class="texto-desktop">
-                Uma plataforma gratuita de saúde e bem-estar para jovens.
-                Informação confiável, acolhimento e comunidade.
-            </p>
+            <div class="descricao">
+                <p>
+                    Uma plataforma gratuita de saúde e bem-estar para jovens.
+                    Informação confiável, acolhimento e comunidade.
+                </p>
+            </div>
 
-            <button class="botao-jornada" type="button">
-                Iniciar jornada
-            </button>
-
-            <nav class="acoes-desktop" aria-label="Acessar o Nexo">
+            <div class="botoes">
                 <a class="botao-jornada" href="02-cadastro.html">
                     Iniciar jornada
                 </a>
-                <a class="botao-conta" href="03-login.html">
+
+                <a class="tenho-conta" href="03-login.html">
                     Já tenho conta
                 </a>
-            </nav>
-        </main>
+            </div>
 
-        <aside class="beneficios" aria-label="Áreas de saúde">
-            <article class="beneficio">
-                <span class="icone-beneficio" aria-hidden="true">♡</span>
+        </section>
+
+        <aside class="cards-desktop">
+
+            <div class="card-tema">
+                <i data-lucide="brain" aria-hidden="true"></i>
+
                 <div>
-                    <h2>Bem-estar</h2>
-                    <p>Autoestima, autoconhecimento e bem-estar emocional</p>
+                    <h3>Bem-estar</h3>
+                    <p>Ansiedade, autoconhecimento e bem-estar emocional</p>
                 </div>
-            </article>
+            </div>
 
-            <article class="beneficio">
-                <span class="icone-beneficio" aria-hidden="true">✧</span>
+            <div class="card-tema">
+                <i data-lucide="heart-pulse" aria-hidden="true"></i>
+
                 <div>
-                    <h2>Saúde Sexual</h2>
+                    <h3>Saúde Sexual</h3>
                     <p>Prevenção, ISTs, PrEP e relacionamentos</p>
                 </div>
-            </article>
+            </div>
 
-            <article class="beneficio">
-                <span class="icone-beneficio" aria-hidden="true">＋</span>
+            <div class="card-tema">
+                <i data-lucide="stethoscope" aria-hidden="true"></i>
+
                 <div>
-                    <h2>Saúde Física</h2>
+                    <h3>Saúde Física</h3>
                     <p>Hábitos saudáveis, alimentação e cuidados</p>
                 </div>
-            </article>
+            </div>
+
         </aside>
-    </div>
+
+    </main>
+
+    <!-- Biblioteca de ícones -->
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
 </body>
+
 </html>
