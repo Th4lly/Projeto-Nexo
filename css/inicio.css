@@ -9,6 +9,7 @@
     --cor-fundo: #f8fbff;
     --cor-fundo-cartao: #2f4d2f;
     --cor-fundo-botao: #f8fbff;
+    --cor-destaque: #5b1d48;
 }
 
 * {
@@ -32,7 +33,7 @@ body {
     min-height: min(92vh, 700px);
     display: flex;
     flex-direction: column;
-    justify-content: center; /* centraliza o conteúdo na vertical */
+    justify-content: center;
     align-items: center;
     padding: 34px 20px;
     border-radius: 18px;
@@ -92,7 +93,159 @@ body {
     filter: brightness(0.94);
 }
 
-.botao-jornada:focus-visible {
+.botao-jornada:focus-visible,
+.botao-conta:focus-visible {
     outline: 3px solid #ffffff;
     outline-offset: 4px;
+}
+
+/* Estes elementos extras ficam escondidos no celular */
+.texto-desktop,
+.acoes-desktop,
+.beneficios {
+    display: none;
+}
+
+/* Só altera o layout em telas de desktop */
+@media (min-width: 760px) {
+    body {
+        padding: 20px;
+    }
+
+    .cartao-inicial {
+        width: min(100%, 1200px);
+        min-height: min(620px, calc(100vh - 40px));
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+            "cabecalho beneficios"
+            "conteudo beneficios";
+        align-items: center;
+        justify-items: stretch;
+        gap: clamp(32px, 6vw, 80px);
+        padding: clamp(40px, 6vw, 76px);
+        border-radius: 10px;
+        background: linear-gradient(
+            to bottom,
+            #2f702f 0%,
+            var(--cor-fundo-cartao) 72%,
+            var(--cor-destaque) 100%
+        );
+    }
+
+    .cabecalho {
+        grid-area: cabecalho;
+    }
+
+    .conteudo {
+        grid-area: conteudo;
+        margin-top: 10px;
+    }
+
+    .descricao p {
+        font-size: clamp(20px, 2.8vw, 30px);
+        font-weight: 600;
+        line-height: 1.35;
+    }
+
+    /* O botão original continua no mobile; no desktop usamos os links */
+    .conteudo > .botao-jornada {
+        display: none;
+    }
+
+    .texto-desktop {
+        display: block;
+        max-width: 440px;
+        margin-top: 22px;
+        font-size: 12px;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    .acoes-desktop {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 10px;
+        margin-top: 22px;
+    }
+
+    .acoes-desktop .botao-jornada,
+    .botao-conta {
+        min-height: 38px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 8px 16px;
+        border: 0;
+        border-radius: 999px;
+        background-color: var(--cor-fundo-botao);
+        color: var(--cor-texto-secundaria);
+        font: inherit;
+        font-size: 11px;
+        font-weight: 500;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .botao-conta:hover {
+        filter: brightness(0.94);
+    }
+
+    .beneficios {
+        grid-area: beneficios;
+        width: 100%;
+        display: grid;
+        gap: 12px;
+    }
+
+    .beneficio {
+        min-height: 82px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 16px;
+        border-radius: 16px;
+        background-color: rgb(255 255 255 / 18%);
+        box-shadow: 0 4px 8px rgb(0 0 0 / 12%);
+        text-align: left;
+    }
+
+    .icone-beneficio {
+        width: 38px;
+        height: 38px;
+        flex: 0 0 38px;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgb(255 255 255 / 70%);
+        border-radius: 50%;
+        font-size: 24px;
+        line-height: 1;
+    }
+
+    .beneficio h2 {
+        margin-bottom: 3px;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .beneficio p {
+        font-size: 10px;
+        line-height: 1.4;
+    }
+}
+@media (min-width: 760px) {
+    body {
+        padding: 0;
+    }
+
+    .cartao-inicial {
+        width: 100%;
+        max-width: none;
+        min-height: 100vh;
+        min-height: 100svh;
+        border-radius: 0;
+    }
 }
