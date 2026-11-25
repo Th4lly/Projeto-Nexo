@@ -1,0 +1,593 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* CORES E CONFIGURAÇÕES GERAIS */
+
+:root {
+    --fonte: "Poppins", sans-serif;
+    --verde: #2f4d2f;
+    --verde-claro: #355735;
+    --roxo: #802764;
+    --botao: #5b1d48;
+    --branco: #f8fbff;
+    --cartao: #d7e2ea;
+    --campo: #a8b6ab;
+    --texto: #18191b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--fonte);
+    color: var(--texto);
+    background-color: var(--verde);
+}
+
+/* FUNDO DA PÁGINA */
+
+.register-page {
+    min-height: 100vh;
+}
+
+.register-container {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+
+    background: linear-gradient(
+        180deg,
+        var(--verde) 0%,
+        var(--verde-claro) 48%,
+        var(--roxo) 85%
+    );
+}
+
+/* PAINEL DE CADASTRO */
+
+.register-card {
+    width: 100%;
+    max-width: 1400px;
+    min-height: 650px;
+
+    display: grid;
+
+    grid-template-columns: 20% 32% minmax(0, 1fr);
+
+    grid-template-rows: 1fr 1fr;
+
+    grid-template-areas:
+        "marca texto formulario"
+        "marca acoes formulario";
+
+    column-gap: 30px;
+
+    padding: 40px 45px;
+
+    border-radius: 22px;
+    background-color: var(--cartao);
+}
+
+/* APRESENTAÇÃO DO NEXO */
+
+.apresentacao {
+    grid-area: marca;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: start;
+}
+
+.logo-nexo {
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    background-color: #f5f5f5;
+    background-image: url("../img/projeto%20nexo%20img.jpeg");
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    object-position: -9999px;
+
+    margin-bottom: 18px;
+}
+
+
+.apresentacao h1 {
+    font-size: 34px;
+    font-weight: 600;
+    padding-left: 20px;
+}
+
+/* TEXTO DE CADASTRO */
+
+.texto-cadastro {
+    grid-area: texto;
+    align-self: end;
+
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.texto-cadastro h2 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.4;
+
+    margin-bottom: 22px;
+}
+
+.subtitle {
+    max-width: 290px;
+    margin: 0 auto;
+
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.titulo-mobile {
+    display: none;
+}
+
+/* FORMULÁRIO */
+
+#registerForm {
+    grid-area: formulario;
+
+    width: 100%;
+    max-width: 440px;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-self: center;
+
+    text-align: left;
+}
+
+#registerForm > label,
+.birth-field legend {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+/* CAMPOS E ÍCONES */
+
+.input-icon,
+.birth-input,
+.password-box {
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 28px;
+    background-color: var(--campo);
+}
+
+.input-icon {
+    margin-bottom: 18px;
+}
+
+.input-icon i,
+.password-box > i {
+    margin-left: 16px;
+    font-size: 19px;
+    color: #526457;
+}
+
+.input-icon input,
+.input-icon select,
+.birth-input select,
+.password-box input {
+    width: 100%;
+    min-width: 0;
+    height: 50px;
+
+    border: none;
+    border-radius: 28px;
+
+    background-color: transparent;
+
+    font-family: var(--fonte);
+    font-size: 15px;
+    color: var(--texto);
+}
+
+.input-icon input,
+.input-icon select,
+.password-box input {
+    padding: 0 14px;
+}
+
+.input-icon select {
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.input-icon input:focus,
+.input-icon select:focus,
+.birth-input select:focus,
+.password-box input:focus {
+    outline: none;
+}
+
+#registerForm input::placeholder {
+    color: #454f46;
+}
+
+.input-icon:focus-within,
+.birth-input:focus-within,
+.password-box:focus-within {
+    outline: 2px solid var(--verde);
+    outline-offset: 2px;
+}
+
+/* DATA DE NASCIMENTO */
+
+.birth-field {
+    min-width: 0;
+    border: none;
+    margin-bottom: 18px;
+}
+
+.birth-row {
+    display: flex;
+    gap: 10px;
+}
+
+.birth-input {
+    flex: 1;
+    min-width: 0;
+    padding-right: 8px;
+}
+
+.birth-input:first-child {
+    flex: 1.3;
+}
+
+.birth-input i {
+    margin-left: 14px;
+    font-size: 17px;
+    color: #526457;
+}
+
+.birth-input select {
+    padding: 0 5px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* SENHA */
+
+.toggle-password {
+    padding: 0 16px;
+
+    border: none;
+    background-color: transparent;
+
+    cursor: pointer;
+}
+
+.toggle-password i {
+    font-size: 19px;
+    color: #526457;
+}
+
+/* BOTÕES E LINKS */
+
+.acoes-cadastro {
+    grid-area: acoes;
+    align-self: start;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 30px;
+}
+
+.submit-button {
+    width: 220px;
+    max-width: 100%;
+    height: 46px;
+
+    border: none;
+    border-radius: 24px;
+
+    background-color: var(--botao);
+    color: #ffffff;
+
+    font-family: var(--fonte);
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: var(--roxo);
+}
+
+.login-link {
+    margin-top: 14px;
+
+    font-size: 15px;
+    text-align: center;
+}
+
+.login-link a {
+    color: var(--botao);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.feedback {
+    font-size: 13px;
+    text-align: center;
+}
+
+.feedback:not(:empty) {
+    margin-top: 10px;
+}
+
+/* RESPONSIVIDADE - TABLET */
+
+@media (max-width: 900px) {
+
+    .register-container {
+        padding: 25px;
+    }
+
+    .register-card {
+        min-height: 540px;
+
+        grid-template-columns: 16% 34% minmax(0, 1fr);
+
+        column-gap: 15px;
+
+        padding: 30px 25px;
+    }
+
+    .logo-nexo {
+        width: 85px;
+        height: 85px;
+        padding: 10px;
+    }
+
+    .apresentacao h1 {
+        font-size: 25px;
+        padding-left: 8px;
+    }
+
+    .texto-cadastro h2 {
+        font-size: 20px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    #registerForm > label,
+    .birth-field legend {
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+
+    .input-icon,
+    .birth-input,
+    .password-box {
+        height: 44px;
+    }
+
+    .input-icon input,
+    .input-icon select,
+    .birth-input select,
+    .password-box input {
+        height: 44px;
+        font-size: 13px;
+    }
+
+    .input-icon input,
+    .input-icon select,
+    .password-box input {
+        padding: 0 12px;
+    }
+
+    .input-icon i,
+    .password-box > i {
+        margin-left: 14px;
+        font-size: 17px;
+    }
+
+    .input-icon,
+    .birth-field {
+        margin-bottom: 16px;
+    }
+
+    .birth-row {
+        gap: 8px;
+    }
+
+    .birth-input i {
+        margin-left: 10px;
+        font-size: 15px;
+    }
+
+    .birth-input select {
+        font-size: 12px;
+    }
+
+    .toggle-password {
+        padding: 0 14px;
+    }
+
+    .toggle-password i {
+        font-size: 17px;
+    }
+
+    .acoes-cadastro {
+        margin-top: 28px;
+    }
+
+    .submit-button {
+        width: 150px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .login-link {
+        margin-top: 12px;
+        font-size: 11px;
+    }
+
+}
+
+/* RESPONSIVIDADE - MOBILE */
+
+@media (max-width: 600px) {
+
+    .register-container {
+        padding: 20px;
+
+        /* Fundo verde sem degradê */
+        background: var(--verde);
+    }
+
+    .register-card {
+        width: 100%;
+        max-width: 400px;
+        min-height: 0;
+
+        grid-template-columns: 1fr;
+
+        grid-template-rows: auto;
+
+        grid-template-areas:
+            "marca"
+            "texto"
+            "formulario"
+            "acoes";
+
+        gap: 22px;
+
+        padding: 35px 20px;
+
+        border-radius: 20px;
+        background-color: var(--branco);
+    }
+
+    /* LOGO CENTRALIZADA */
+
+    .apresentacao {
+        align-items: center;
+    }
+
+    .logo-nexo {
+        width: 105px;
+        height: 105px;
+        padding: 12px;
+        margin-bottom: 0;
+    }
+
+    .apresentacao h1 {
+        display: none;
+    }
+
+    /* TÍTULO MOBILE */
+
+    .titulo-desktop {
+        display: none;
+    }
+
+    .titulo-mobile {
+        display: block;
+    }
+
+    .texto-cadastro {
+        padding-bottom: 0;
+    }
+
+    .texto-cadastro h2 {
+        font-size: 23px;
+        margin-bottom: 12px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        max-width: 240px;
+    }
+
+    /* FORMULÁRIO MOBILE */
+
+    #registerForm {
+        width: 100%;
+        max-width: none;
+    }
+
+    #registerForm > label,
+    .birth-field legend {
+        font-size: 12px;
+    }
+
+    .input-icon,
+    .birth-input,
+    .password-box {
+        height: 40px;
+    }
+
+    .input-icon input,
+    .input-icon select,
+    .birth-input select,
+    .password-box input {
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .input-icon {
+        margin-bottom: 16px;
+    }
+
+    .birth-row {
+        gap: 7px;
+    }
+
+    /* BOTÕES MOBILE */
+
+    .acoes-cadastro {
+        margin-top: 10px;
+    }
+
+    .submit-button {
+        width: 180px;
+        height: 42px;
+        font-size: 13px;
+    }
+
+    .login-link {
+        margin-top: 25px;
+        margin-bottom: 8px;
+        font-size: 12px;
+    }
+
+    .feedback {
+        font-size: 12px;
+    }
+
+}

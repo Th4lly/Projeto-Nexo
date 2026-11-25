@@ -1,38 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="MY_CLIENT_ID_ON_GOOGLE_DEV.apps.googleusercontent.com">
 
-    <title>Nexo || Login</title>
+    <title>Nexo | Login</title>
 
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
+    <section>
+        <img
+            class="logo"
+            src="../img/projeto%20nexo%20img.jpeg"
+            alt="Logo do Nexo"
+        >
 
-    <header>
-        <h1> Nexo </h1>
+        <h1>Nexo</h1>
+        <p class="subtitle">Que ótimo te ver de novo!</p>
+        <p>Faça login para continuar</p>
+    </section>
 
-        <p class="subtitle">
-            Que ótimo te ver de novo!
-        </p>
-
-        <p>
-            Faça login para continuar
-        </p>
-
-    </header>
-
-    <main class="login-card">
-        
-        <section>
+    <div class="login-card">
         <form id="loginForm">
-
-            <!-- Email -->
-            <label for="email"> E-mail </label>
-            <input 
+            <label for="email">E-mail</label>
+            <input
                 type="email"
                 id="email"
                 name="email"
@@ -41,9 +34,8 @@
                 required
             >
 
-            <!-- Senha -->
-            <label for="password"> Senha </label>
-            <input 
+            <label for="password">Senha</label>
+            <input
                 type="password"
                 id="password"
                 name="password"
@@ -53,40 +45,48 @@
             >
 
             <label for="remember">
-                <input 
-                    type="checkbox"
-                    id="remember"
-                    name="remember"
-                >
+                <input type="checkbox" id="remember" name="remember">
                 Lembre de mim
             </label>
 
             <p>
-                <a href="forgot-password.html"> Esqueceu sua senha? </a>
+                <a href="forgot-password.html">Esqueceu sua senha?</a>
             </p>
 
-            <button type="submit"> Entrar </button>
+            <button type="submit">Entrar</button>
 
-            <span> ou </span> 
+            <p>ou</p>
 
             <div class="google-signin">
-          <!-- To integrate Google Sign-in -->
-          <script src="https://apis.google.com/js/api.js"></script>
-          <script src="https://apis.google.com/js/platform.js" async defer></script>
+                <div
+                    id="g_id_onload"
+                    data-client_id="COLE_AQUI_SEU_CLIENT_ID_REAL"
+                    data-callback="handleCredentialResponse">
+                </div>
+
+                <div
+                    class="g_id_signin"
+                    data-type="standard"
+                    data-shape="pill"
+                    data-theme="outline"
+                    data-text="continue_with"
+                    data-size="large"
+                    data-locale="pt-BR">
+                </div>
             </div>
 
-            <div class="g-signin2" data-onsuccess="onSignIn"></div>
-             
+            <p>
+                Não tem uma conta?
+                <a href="cadastro.html">Cadastre-se</a>
+            </p>
         </form>
+    </div>
 
-        <footer>
-          <p>
-             Não tem uma conta?
-        <a href="cadastro.html">Cadastre-se</a> </p>
-        </footer>
-        
-      </section>
-    </main>
-    
+    <script>
+        function handleCredentialResponse(response) {
+            console.log("Resposta de login recebida do Google.");
+            // Para autenticar o usuário de verdade, valide o token no servidor.
+        }
+    </script>
 </body>
 </html>

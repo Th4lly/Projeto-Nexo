@@ -24,30 +24,28 @@
 
 html,
 body {
-    height: 100%;
+    min-height: 100%;
 }
 
 body {
-    padding: 16px;
     background-color: var(--cor-fundo);
     font-family: var(--fonte-primaria);
-
     min-height: 100vh;
-    padding-bottom: 2rem;
 }
 
 main {
-    height: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    /* centraliza o conteúdo na vertical */
-    
+    /* Centraliza o conteúdo na vertical */
+
     align-items: center;
 
     padding: 34px 20px;
-    border-radius: 18px;
 
     background-color: var(--cor-fundo-cartao);
     color: var(--cor-texto-primaria);
@@ -55,68 +53,80 @@ main {
     text-align: center;
 }
 
-.logo {
-    width: 80px;
-    height: 80px;
-    padding: 8px;
-    border-radius: 30%;
-    background-color: var(--cor-fundo);
-    object-fit: cover;
+.hero {
+    width: 100%;
 }
 
-.cabecalho {
+.logo {
+    width: 140px;
+    height: 140px;
+
+    border-radius: 50%;
+    background-color: #f5f5f5;
+
+    background-image: url("../img/projeto%20nexo%20img.jpeg");
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    object-position: -9999px;
+}
+
+header {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 14px;
 }
 
-.cabecalho h1 {
-    font-size: 24px;
+header h1 {
+    font-size: 32px;
     font-weight: 600;
 }
 
-.conteudo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 14px;
-}
-
-.descricao p {
-    font-size: 12px;
+.subtitulo {
+    margin-top: 24px;
+    font-size: 16px;
     line-height: 1.9;
 }
 
-.botao-jornada {
+.descricao p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.botao-jornada,
+.tenho-conta {
     margin-top: 40px;
-    padding: 8px 16px;
+    padding: 10px 22px;
+
     border: 0;
     border-radius: 999px;
+
     background-color: var(--cor-fundo-botao);
     color: var(--cor-texto-secundaria);
+
     font: inherit;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
+
     cursor: pointer;
-}
+    text-decoration: none;
 
-.botao-jornada:hover {
-    filter: brightness(0.94);
-}
-
-.botao-jornada:focus-visible {
-    outline: 3px solid #ffffff;
-    outline-offset: 4px;
-}
-
-button {
+    display: inline-block;
     transition: all 0.2s ease-in-out;
 }
 
-button:hover {
+.botao-jornada:hover,
+.tenho-conta:hover {
+    filter: brightness(0.94);
     transform: scale(1.05);
-    cursor: pointer;
+}
+
+.botao-jornada:focus-visible,
+.tenho-conta:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 4px;
 }
 
 .cards-desktop,
@@ -125,111 +135,163 @@ button:hover {
     display: none;
 }
 
+/* Versão desktop */
+
 @media (min-width: 1024px) {
 
     main {
         max-width: 100%;
-        padding: 80px;
+        padding: 40px 8%;
 
-        background-image: linear-gradient(#2C732C, #2C732C, #2F4D2F, #A73584);
+        background-image: linear-gradient(
+            180deg,
+            #2f4d2f 0%,
+            #355735 48%,
+            #802764 85%,
+            #5b1d48 100%
+        );
 
         display: grid;
-        grid-template-columns: 55% 45%;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
         align-items: center;
-        gap: 80px;
+        justify-content: center;
+
+        gap: 40px;
     }
 
     .hero {
         width: 100%;
-        max-width: 650px;
-    }
+        max-width: 720px;
+        justify-self: center;
 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        text-align: center;
+    }
 
     header {
         text-align: center;
-        margin-bottom: 20px;
-        font-size: 1.25rem;
-        font-weight: 70;
+        margin-bottom: 24px;
+        gap: 12px;
+    }
+
+    header h1 {
+        font-size: 48px;
+        font-weight: 600;
     }
 
     .logo {
-        width: 90px;
-        height: 90px;
-        margin-bottom: 16px;
+        width: 130px;
+        height: 130px;
+        margin-bottom: 0;
     }
 
     .subtitulo {
-        max-width: 650px;
-        font-size: 2rem;
-        font-weight: 400;
-        line-height: 1.2;
-        text-align: center;
-        margin-bottom: 32px
-    }
+        width: 100%;
+        max-width: 720px;
 
+        font-size: clamp(28px, 2.7vw, 40px);
+        font-weight: 600;
+        line-height: 1.3;
+
+        text-align: center;
+
+        margin: 0 auto 36px;
+    }
 
     .cards-desktop,
     .descricao,
     .tenho-conta {
         display: block;
-        flex: grid;
     }
 
     .descricao {
+        width: 100%;
         max-width: 500px;
-        font-size: 4rem;
-        margin: 0 auto 40px;
-        text-align: left
+
+        margin: 0 auto 30px;
+        text-align: center;
+    }
+
+    .descricao p {
+        font-size: 18px;
+        line-height: 1.6;
     }
 
     .botoes {
         display: flex;
         flex-direction: row;
-        gap: 16px;
-        margin-top: 40px;
-        
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        gap: 18px;
+
+        width: 100%;
+        max-width: 500px;
+
+        margin: 0 auto;
     }
 
+    .botao-jornada,
     .tenho-conta {
-        margin-top: 40px;
-        padding: 8px 16px;
-        border: 0;
-        border-radius: 999px;
-        background-color: var(--cor-fundo-botao);
-        color: var(--cor-texto-secundaria);
-        font: inherit;
-        font-size: 12px;
-        font-weight: 500;
-        cursor: pointer;
+        margin-top: 0;
+        padding: 14px 28px;
+
+        min-width: 170px;
+
+        font-size: 16px;
+        text-align: center;
     }
 
     .cards-desktop {
         display: flex;
         flex-direction: column;
         gap: 24px;
+
+        width: 100%;
+        max-width: 440px;
+
+        justify-self: center;
     }
 
     .card-tema {
         background: rgba(255, 255, 255, .15);
         backdrop-filter: blur(10px);
 
-        border-radius: 3rem;
-        padding: 24px;
+        border-radius: 30px;
+        padding: 28px;
 
-        min-height: 110px;
+        min-height: 140px;
 
-        box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, .15);
+
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .card-tema svg {
+        width: 48px;
+        height: 48px;
+
+        stroke-width: 1.4;
+        flex-shrink: 0;
     }
 
     .card-tema h3 {
-        margin-bottom: 0.5rem;
-        font-size: 1.2rem;
-        font-weight: 70;
+        margin-bottom: 6px;
+
+        font-size: 21px;
+        font-weight: 500;
+
         text-align: left;
     }
 
     .card-tema p {
-        font-size: .9rem;
+        font-size: 15px;
         line-height: 1.5;
         text-align: left;
     }

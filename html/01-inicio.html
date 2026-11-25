@@ -8,6 +8,8 @@
 
     <title>Nexo || Início</title>
 
+    <link rel="icon" type="image/jpeg" href="../img/projeto%20nexo%20img.jpeg">
+
     <link rel="stylesheet" href="../css/inicio.css">
 </head>
 
@@ -16,7 +18,7 @@
 
         <section class="hero">
             <header>
-                <img class="logo" src="../img/logo.jpeg" alt="">
+                <img class="logo" src="../img/projeto%20nexo%20img.jpeg" alt="Logo do Nexo">
                 <h1>Nexo</h1>
             </header>
 
@@ -31,37 +33,58 @@
                     Informação confiável, acolhimento e comunidade.
                 </p>
             </div>
-         
-            <div class="botoes">
-            <button class="botao-jornada">
-                Iniciar jornada
-            </button>
 
-            <button class="tenho-conta">
-                Já tenho conta
-            </button>
+            <div class="botoes">
+                <a class="botao-jornada" href="02-cadastro.html">
+                    Iniciar jornada
+                </a>
+
+                <a class="tenho-conta" href="03-login.html">
+                    Já tenho conta
+                </a>
             </div>
 
         </section>
 
         <aside class="cards-desktop">
+
             <div class="card-tema">
-                <h3>Bem-estar</h3>
-                <p>Ansiedade, autoconhecimento e bem-estar emocional</p>
+                <i data-lucide="brain" aria-hidden="true"></i>
+
+                <div>
+                    <h3>Bem-estar</h3>
+                    <p>Ansiedade, autoconhecimento e bem-estar emocional</p>
+                </div>
             </div>
 
             <div class="card-tema">
-                <h3>Saúde Sexual</h3>
-                <p>Prevenção, ISTs, PrEP e relacionamentos</p>
+                <i data-lucide="heart-pulse" aria-hidden="true"></i>
+
+                <div>
+                    <h3>Saúde Sexual</h3>
+                    <p>Prevenção, ISTs, PrEP e relacionamentos</p>
+                </div>
             </div>
 
             <div class="card-tema">
-                <h3>Saúde Física</h3>
-                <p>Hábitos saudáveis, alimentação e cuidados</p>
+                <i data-lucide="stethoscope" aria-hidden="true"></i>
+
+                <div>
+                    <h3>Saúde Física</h3>
+                    <p>Hábitos saudáveis, alimentação e cuidados</p>
+                </div>
             </div>
+
         </aside>
 
     </main>
+
+    <!-- Biblioteca de ícones -->
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+
+    <script>
+        lucide.createIcons();
+    </script>
 
 </body>
 
