@@ -1,55 +1,67 @@
-// Animação das barras de doação
+const VALOR_DOACAO = 50;
 
-const campanhas = document.querySelectorAll(".campaign-card");
+const formatarReal = (valor) =>
+  valor.toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+    maximumFractionDigits: 0,
+  });
 
-campanhas.forEach((campanha) => {
+const calcularPorcentagem = (valor, meta) =>
+  Math.min(100, Math.round((valor / meta) * 100));
 
-    const meta = Number(campanha.dataset.meta);
-    const arrecadado = Number(campanha.dataset.arrecadado);
+// anima os números junto com a barra
+function contar(card, de, ate, duracao = 900) {
+  const meta = Number(card.dataset.meta);
+  const valorEl = card.querySelector('.campaign-value');
+  const percentEl = card.querySelector('.campaign-percent');
+  const inicio = performance.now();
 
-    // Evita erro se a meta vier zerada
-    const porcentagem =
-        meta > 0
-            ? Math.min((arrecadado / meta) * 100, 100)
-            : 0;
+  function passo(agora) {
+    const t = Math.min((agora - inicio) / duracao, 1);
+    const suave = 1 - Math.pow(1 - t, 3);
+    const atual = Math.round(de + (ate - de) * suave);
 
-    const porcentagemInteira = Math.round(porcentagem);
+    valorEl.textContent = `${formatarReal(atual)} de ${formatarReal(meta)}`;
+    percentEl.textContent = `${calcularPorcentagem(atual, meta)}%`;
 
-    const barra = campanha.querySelector(".progress-fill");
-    const valor = campanha.querySelector(".campaign-value");
-    const percentual = campanha.querySelector(".campaign-percent");
+    if (t < 1) requestAnimationFrame(passo);
+  }
 
-    // Valor arrecadado
-    valor.textContent =
-        `R$ ${arrecadado.toLocaleString('pt-BR')} de R$ ${meta.toLocaleString('pt-BR')}`;
+  requestAnimationFrame(passo);
+}
 
-    // Inicia em 0%
-    percentual.textContent = "0%";
+function atualizar(card, de, ate) {
+  const meta = Number(card.dataset.meta);
+  card.querySelector('.progress-fill').style.width =
+    `${calcularPorcentagem(ate, meta)}%`;
+  contar(card, de, ate);
+  card.dataset.arrecadado = ate;
+}
 
-    // Anima o texto da porcentagem
-    let contador = 0;
+document.querySelectorAll('.campaign-card').forEach((card, i) => {
+  const meta = Number(card.dataset.meta);
+  const arrecadado = Number(card.dataset.arrecadado);
+  const botao = card.querySelector('.donate-button');
 
-    const animacao = setInterval(() => {
+  // animação de entrada, um card depois do outro
+  card.dataset.arrecadado = 0;
+  setTimeout(() => atualizar(card, 0, arrecadado), 150 + i * 120);
 
-        contador++;
+  botao.addEventListener('click', () => {
+    const atual = Number(card.dataset.arrecadado);
+    if (atual >= meta) return;
 
-        percentual.textContent = `${contador}%`;
+    const novo = Math.min(meta, atual + VALOR_DOACAO);
+    atualizar(card, atual, novo);
 
-        if (contador >= porcentagemInteira) {
+    card.classList.remove('recebeu');
+    void card.offsetWidth; // reinicia a animação do brilho
+    card.classList.add('recebeu');
 
-            percentual.textContent =
-                `${porcentagemInteira}%`;
-
-            clearInterval(animacao);
-        }
-
-    }, 20);
-
-    // Anima a barra
-    setTimeout(() => {
-
-        barra.style.width = `${porcentagem}%`;
-
-    }, 300);
-
+    if (novo >= meta) {
+      botao.textContent = 'Meta atingida 🎉';
+      botao.disabled = true;
+    }
+  });
 });
