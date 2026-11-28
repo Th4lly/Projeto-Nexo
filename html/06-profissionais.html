@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2e5034">
+
+  <title>Nexo | Profissionais</title>
+
+  <link rel="icon" type="image/png" href="../img/favicon.png">
+  <link rel="stylesheet" href="../css/profissionais.css">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <aside class="sidebar">
+      <a href="#" class="brand">
+        <span>Nexo</span>
+        <span class="brand-leaf" aria-hidden="true">
+          <img class="logo" src="../img/projeto nexo img.jpeg" alt="Logo do Nexo">
+        </span>
+      </a>
+
+      <p class="sidebar-title">Menu</p>
+
+      <nav class="sidebar-nav" aria-label="Menu principal">
+
+        <a href="#" class="nav-item">
+          <span class="nav-icon">
+            <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M19.75 21H14v-5.005a2 2 0 1 0-4 0V21H4.25C3.56 21 3 20.44 3 19.75v-9.315l8.13-7.885a1.24 1.24 0 0 1 1.74 0L21 10.435v9.315c0 .69-.56 1.25-1.25 1.25Zm-4.25-1.5h4v-8.435L12 3.795 4.5 11.07v8.435h4V16c0-1.93 1.57-3.5 3.5-3.5s3.5 1.57 3.5 3.5v3.505-.005Z"
+                fill="#202023" />
+            </svg>
+          </span>
+          <span>Home</span>
+        </a>
+
+        <a href="05-biblioteca.html" class="nav-item">
+          <span class="nav-icon">
+            <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M18.78 4H5.22L2 13.12v4.13A2.755 2.755 0 0 0 4.75 20h14.5A2.755 2.755 0 0 0 22 17.25v-4.13L18.78 4ZM6.28 5.5h11.44l2.47 7H14.5l-.19.46A2.495 2.495 0 0 1 12 14.5a2.495 2.495 0 0 1-2.31-1.54l-.19-.46H3.81l2.47-7Zm12.97 13H4.75c-.69 0-1.25-.56-1.25-1.25V14h5.035c.71 1.23 2.02 2 3.465 2 1.445 0 2.755-.77 3.465-2H20.5v3.25c0 .69-.56 1.25-1.25 1.25Z"
+                fill="#202023" />
+            </svg>
+          </span>
+          <span>Biblioteca</span>
+        </a>
+
+        <a href="06-profissionais.html" aria-current="page" class="nav-item active">
+          <span class="nav-icon">
+            <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M7 9C5.07 9 3.5 7.43 3.5 5.5S5.07 2 7 2s3.5 1.57 3.5 3.5S8.93 9 7 9Zm0-5.5a2 2 0 1 0-.001 3.999A2 2 0 0 0 7 3.5Zm6.5 2C13.5 7.43 15.07 9 17 9s3.5-1.57 3.5-3.5S18.93 2 17 2s-3.5 1.57-3.5 3.5Zm1.5 0a2 2 0 1 1 3.999-.001A2 2 0 0 1 15 5.5Zm-6.5 7c0 1.93 1.57 3.5 3.5 3.5s3.5-1.57 3.5-3.5S13.93 9 12 9s-3.5 1.57-3.5 3.5Zm1.5 0a2 2 0 1 1 3.999-.001A2 2 0 0 1 10 12.5Zm5.92 7.425.61 2.27v-.005l1.45-.39-.61-2.265a2.75 2.75 0 0 0-2.655-2.04h-5.43c-1.24 0-2.335.84-2.655 2.04l-.61 2.27 1.45.39.61-2.27c.145-.545.64-.925 1.205-.925h5.43c.565 0 1.06.38 1.205.925Zm4.505-7 .74 2.77 1.45-.39-.74-2.765a2.75 2.75 0 0 0-2.655-2.04h-2.215V12h2.215c.565 0 1.06.38 1.205.925Zm-19.04 2.38 1.45.39v-.005l.74-2.77c.145-.545.64-.925 1.205-.925h2.215v-1.5H4.78c-1.24 0-2.335.84-2.655 2.04l-.74 2.77Z"
+                fill="#202023" />
+            </svg>
+          </span>
+          <span>Profissionais</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="nav-icon">
+            <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M16.5 3.515c-1.825 0-3.49.9-4.5 2.34a5.495 5.495 0 0 0-4.5-2.34 5.503 5.503 0 0 0-3.89 9.39l8.39 8.39a5.974 5.974 0 0 0 0 0l8.39-8.39a5.503 5.503 0 0 0-3.89-9.39Zm2.83 8.33L12 19.175l-7.33-7.33a3.974 3.974 0 0 1-1.17-2.83c0-2.205 1.795-4 4-4 1.72 0 3.24 1.095 3.79 2.725a.748.748 0 0 0 1.42 0 3.996 3.996 0 0 1 3.79-2.725c2.205 0 4 1.795 4 4 0 1.07-.415 2.075-1.17 2.83Z"
+                fill="#202023" />
+            </svg>
+          </span>
+          <span>Doações</span>
+        </a>
+
+      </nav>
+    </aside>
+
+    <main class="main-content">
+
+      <header class="desktop-header">
+        <a href="#" class="brand">
+          <span>Nexo</span>
+          <span class="brand-leaf" aria-hidden="true">
+            <img class="logo" src="../img/projeto nexo img.jpeg" alt="Logo do Nexo">
+          </span>
+        </a>
+
+        <button class="profile-avatar" aria-label="Perfil">
+          G
+        </button>
+      </header>
+
+      <section class="professionals-page">
+
+        <header class="mobile-header">
+          <a href="05-biblioteca.html" class="back-button" aria-label="Voltar">
+            ←
+          </a>
+
+          <h1>Profissionais</h1>
+
+          <button class="profile-avatar" aria-label="Perfil">
+            G
+          </button>
+        </header>
+
+        <div class="page-heading">
+          <h1>Profissionais</h1>
+        </div>
+
+        <p class="professionals-intro">
+          Encontre o atendimento humanizado que você merece,
+          <strong>sem custos.</strong>
+        </p>
+
+        <section class="professionals-grid" aria-label="Profissionais disponíveis">
+
+          <!-- Dra. Helena Souza -->
+
+          <article class="professional-card">
+
+            <div class="professional-info">
+              <span class="professional-avatar">
+                <img src="../img/profissionais/helena.png" alt="Dra. Helena Souza">
+              </span>
+
+              <div>
+                <h2>Dra. Helena Souza</h2>
+                <p>Ginecologia · atendimento gratuito</p>
+              </div>
+            </div>
+
+            <p class="schedule-label">Próximos horários</p>
+
+            <div class="schedule-options" role="group" aria-label="Horários de Dra. Helena Souza">
+              <button type="button" class="schedule-button" aria-pressed="false">Seg 14h</button>
+              <button type="button" class="schedule-button" aria-pressed="false">Qua 10h</button>
+              <button type="button" class="schedule-button" aria-pressed="false">Sex 16h</button>
+            </div>
+
+            <button type="button" class="appointment-button">
+              Agendar consulta
+            </button>
+
+            <p class="appointment-feedback" role="status"></p>
+
+          </article>
+
+          <!-- Dr. Lucas Almeida -->
+
+          <article class="professional-card">
+
+            <div class="professional-info">
+              <span class="professional-avatar">
+                <img src="../img/profissionais/lucas.png" alt="Dr. Lucas Almeida">
+              </span>
+
+              <div>
+                <h2>Dr. Lucas Almeida</h2>
+                <p>Psicologia · atendimento gratuito</p>
+              </div>
+            </div>
+
+            <p class="schedule-label">Próximos horários</p>
+
+            <div class="schedule-options" role="group" aria-label="Horários de Dr. Lucas Almeida">
+              <button type="button" class="schedule-button" aria-pressed="false">Seg 14h</button>
+              <button type="button" class="schedule-button" aria-pressed="false">Qua 10h</button>
+              <button type="button" class="schedule-button" aria-pressed="false">Sex 16h</button>
+            </div>
+
+            <button type="button" class="appointment-button">
+              Agendar consulta
+            </button>
+
+            <p class="appointment-feedback" role="status"></p>
+
+          </article>
+
+          <!-- Dr. Carlos Silva -->
+
+          <article class="professional-card">
+
+            <div class="professional-info">
+              <span class="professional-avatar">
+                <img src="../img/profissionais/carlos.png" alt="Dr. Carlos Silva">
+              </span>
+
+              <div>
+                <h2>Dr. Carlos Silva</h2>
+                <p>Urologia · atendimento gratuito</p>
+              </div>
+            </div>
+
+            <p class="schedule-label">Próximos horários</p>
+
+            <div class="schedule-options" role="group" aria-label="Horários de Dr. Carlos Silva">
+              <button type="button" class="schedule-button" aria-pressed="false">Seg 14h</button>
+              <button type="button" class="schedule-button" aria-pressed="false">Qua 10h</button>
+              <button type="button" class="schedule-button" aria-pressed="false">Sex 16h</button>
+            </div>
+
+            <button type="button" class="appointment-button">
+              Agendar consulta
+            </button>
+
+            <p class="appointment-feedback" role="status"></p>
+
+          </article>
+
+        </section>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Menu inferior mobile -->
+
+  <nav class="mobile-navigation" aria-label="Navegação inferior">
+
+    <a href="#">
+      <span>
+        <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M19.75 21H14v-5.005a2 2 0 1 0-4 0V21H4.25C3.56 21 3 20.44 3 19.75v-9.315l8.13-7.885a1.24 1.24 0 0 1 1.74 0L21 10.435v9.315c0 .69-.56 1.25-1.25 1.25Zm-4.25-1.5h4v-8.435L12 3.795 4.5 11.07v8.435h4V16c0-1.93 1.57-3.5 3.5-3.5s3.5 1.57 3.5 3.5v3.505-.005Z"
+            fill="#202023" />
+        </svg>
+      </span>
+      Início
+    </a>
+
+    <a href="05-biblioteca.html">
+      <span>
+        <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M18.78 4H5.22L2 13.12v4.13A2.755 2.755 0 0 0 4.75 20h14.5A2.755 2.755 0 0 0 22 17.25v-4.13L18.78 4ZM6.28 5.5h11.44l2.47 7H14.5l-.19.46A2.495 2.495 0 0 1 12 14.5a2.495 2.495 0 0 1-2.31-1.54l-.19-.46H3.81l2.47-7Zm12.97 13H4.75c-.69 0-1.25-.56-1.25-1.25V14h5.035c.71 1.23 2.02 2 3.465 2 1.445 0 2.755-.77 3.465-2H20.5v3.25c0 .69-.56 1.25-1.25 1.25Z"
+            fill="#202023" />
+        </svg>
+      </span>
+      Biblioteca
+    </a>
+
+    <a href="#">
+      <span>
+        <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M16.5 3.515c-1.825 0-3.49.9-4.5 2.34a5.495 5.495 0 0 0-4.5-2.34 5.503 5.503 0 0 0-3.89 9.39l8.39 8.39 8.39-8.39a5.503 5.503 0 0 0-3.89-9.39Zm2.83 8.33L12 19.175l-7.33-7.33a3.974 3.974 0 0 1-1.17-2.83c0-2.205 1.795-4 4-4 1.72 0 3.24 1.095 3.79 2.725a.748.748 0 0 0 1.42 0 3.996 3.996 0 0 1 3.79-2.725c2.205 0 4 1.795 4 4 0 1.07-.415 2.075-1.17 2.83Z"
+            fill="#202023" />
+        </svg>
+      </span>
+      Doações
+    </a>
+
+    <a href="06-profissionais.html" aria-current="page" class="selected">
+      <span>
+        <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M7 9C5.07 9 3.5 7.43 3.5 5.5S5.07 2 7 2s3.5 1.57 3.5 3.5S8.93 9 7 9Zm0-5.5a2 2 0 1 0-.001 3.999A2 2 0 0 0 7 3.5Zm6.5 2C13.5 7.43 15.07 9 17 9s3.5-1.57 3.5-3.5S18.93 2 17 2s-3.5 1.57-3.5 3.5Zm1.5 0a2 2 0 1 1 3.999-.001A2 2 0 0 1 15 5.5Zm-6.5 7c0 1.93 1.57 3.5 3.5 3.5s3.5-1.57 3.5-3.5S13.93 9 12 9s-3.5 1.57-3.5 3.5Zm1.5 0a2 2 0 1 1 3.999-.001A2 2 0 0 1 10 12.5Zm5.92 7.425.61 2.27v-.005l1.45-.39-.61-2.265a2.75 2.75 0 0 0-2.655-2.04h-5.43c-1.24 0-2.335.84-2.655 2.04l-.61 2.27 1.45.39.61-2.27c.145-.545.64-.925 1.205-.925h5.43c.565 0 1.06.38 1.205.925Zm4.505-7 .74 2.77 1.45-.39-.74-2.765a2.75 2.75 0 0 0-2.655-2.04h-2.215V12h2.215c.565 0 1.06.38 1.205.925Zm-19.04 2.38 1.45.39v-.005l.74-2.77c.145-.545.64-.925 1.205-.925h2.215v-1.5H4.78c-1.24 0-2.335.84-2.655 2.04l-.74 2.77Z"
+            fill="#202023" />
+        </svg>
+      </span>
+      Profissionais
+    </a>
+
+    <a href="#">
+      <span>
+        <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M6.5 7.5c0 3.035 2.465 5.5 5.5 5.5s5.5-2.465 5.5-5.5S15.035 2 12 2a5.503 5.503 0 0 0-5.5 5.5Zm1.5 0c0-2.205 1.795-4 4-4s4 1.795 4 4-1.795 4-4 4-4-1.795-4-4Zm10.57 10.91 1.015 3.785 1.45-.39-1.015-3.785a4.762 4.762 0 0 0-4.59-3.52H8.57a4.752 4.752 0 0 0-4.59 3.52l-1.015 3.785 1.45.39 1.015-3.785A3.253 3.253 0 0 1 8.57 16h6.86c1.47 0 2.76.99 3.14 2.41Z"
+            fill="#202023" />
+        </svg>
+      </span>
+      Perfil
+    </a>
+
+  </nav>
+
+  <!-- Modal de agendamento -->
+
+  <dialog class="appointment-modal" id="appointmentModal" aria-labelledby="modalTitle">
+
+    <h2 id="modalTitle">Confirmar agendamento</h2>
+
+    <p>Confira os dados da sua consulta.</p>
+
+    <div class="modal-details">
+
+      <p>
+        <strong>Profissional:</strong>
+        <span id="modalProfessional"></span>
+      </p>
+
+      <p>
+        <strong>Especialidade:</strong>
+        <span id="modalSpecialty"></span>
+      </p>
+
+      <p>
+        <strong>Horário:</strong>
+        <span id="modalSchedule"></span>
+      </p>
+
+      <p>Atendimento gratuito</p>
+
+    </div>
+
+    <p class="modal-note">
+      Agendamento simulado para fins acadêmicos.
+    </p>
+
+    <div class="modal-actions">
+
+      <button type="button" id="cancelAppointment">
+        Cancelar
+      </button>
+
+      <button type="button" id="confirmAppointment">
+        Confirmar
+      </button>
+
+    </div>
+
+  </dialog>
+
+  <script src="../js/profissionais.js"></script>
+
+</body>
+</html>
